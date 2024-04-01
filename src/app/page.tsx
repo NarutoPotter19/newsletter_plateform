@@ -1,9 +1,10 @@
-import React from 'react'
+// import React from 'react'
+import Home from "@/modules/home/home";
 
 const Page = () => {
   return (
     <div>
-     <h1> Page</h1> 
+     <Home />
     </div>
   )
 }
