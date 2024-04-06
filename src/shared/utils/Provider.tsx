@@ -24,7 +24,8 @@ import { usePathname } from 'next/navigation';  // Get the current pathname.
                 (
                     <div  className="W-full flex">
                         <div className="w-[290px] h-screen overflow-y-scroll">
-
+                           {// here i will add Dash board letter 
+                           }
                         </div>
 
                     </div>
