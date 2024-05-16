@@ -1,6 +1,6 @@
 import {atom} from 'jotai';
 
-import {ICONS} from "@/shared/utils/Icons";// i ll add it later  
+import {ICONS} from "@/shared/utils/icons";// i ll add it later  
 
 export  const navItems: NavItems[]=[
     {
@@ -55,7 +55,7 @@ export const partners : PartnersTypes[]=[
     ]
 
 
-    export const GrowPlan: PlanType[] = [
+    export const GrowPlan: PlanTypes[] = [
         {
           title: "Up to 10,000 subscribers",
         },
@@ -70,7 +70,7 @@ export const partners : PartnersTypes[]=[
         },
       ];
       
-      export const scalePlan: PlanType[] = [
+      export const scalePlan: PlanTypes[] = [
         {
           title: "Up to 100,000 subscribers",
         },
