@@ -1,11 +1,15 @@
 import type { Config } from "tailwindcss";
 
+import { nextui } from "@nextui-org/react"; // we are adding this to our config to next ui to work in talwind
+// setup 
+
 const config: Config = {
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     // "./src/components/**/*.{js,ts,jsx,tsx,mdx}", since we had no components we will use below-one
     "./src/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./node_module/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}", // to use next ui along with tailwin cs 
   ],
   theme: {
     extend: {
@@ -16,6 +20,6 @@ const config: Config = {
       },
     },
   },
-  plugins: [],
+  plugins: [nextui()],// here adding nextui() as plugin to use next ui in styling 
 };
 export default config;

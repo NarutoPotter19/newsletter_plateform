@@ -7,7 +7,8 @@ In Next.js, the Link component is used for client-side navigation between pages.
 
 */
 import Logo from './logo';
-import NavItems from './navItems'
+import NavItems from './nav.Items';
+import Toolbar from './toolbar';
 
 const Header = () => {
   return (
@@ -23,6 +24,10 @@ const Header = () => {
               <NavItems />
 
               
+            </div>
+
+            <div className="flex items-center gap-3">
+              <Toolbar/>
             </div>
 
       </div>
