@@ -12,6 +12,10 @@ const config: Config = {
     "./node_module/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}", // to use next ui along with tailwin cs 
   ],
   theme: {
+    fontFamily:{ // adding this since i have modified or added font so configuring 
+      //my tailwind configuration 
+      clashDispaly:["var(--font-clashDisplay)"],
+    },
     extend: {
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",

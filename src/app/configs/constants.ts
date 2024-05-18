@@ -97,7 +97,7 @@ export const emailEditorDefaultValue = atom<string>("");
 
 export const settingsActiveItem = atom<string>("Profile");
 
-export const sideBarItems: DashboardSideBarTypes[] = [
+export const sideBarItems: DashBoardSidebarTypes[] = [
   {
     title: "Dashboard",
     url: "/dashboard",

@@ -19,7 +19,7 @@ type DashBoardSidebarTypes = {
 
     title: string;
     url: string;
-    incon:any;
+    icon:any;
 };
 
 type SubscribersDataTypes= {

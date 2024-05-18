@@ -1,9 +1,16 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+// import { Inter } from "next/font/google";
 import "../shared/styles/globals.css";
 import Providers from "@/shared/utils/Provider";
+import localFont from "@next/font/local";
 
-const inter = Inter({ subsets: ["latin"] });
+
+const clashDisplay= localFont({
+  src: "../assets/fonts/ClashDisplay-variable.ttf",
+  variable: "--font-calshDisplay",
+  weight:"700",
+})
+// const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -17,7 +24,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={'${clashDisplay.variable}'}>
         <Providers>
         {children}
         </Providers>
@@ -26,3 +33,4 @@ export default function RootLayout({
     </html>
   );
 }
+//inter.className--> before adding font this was inside body tag classname properties 
