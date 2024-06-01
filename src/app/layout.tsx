@@ -6,7 +6,7 @@ import localFont from "@next/font/local";
 
 
 const clashDisplay= localFont({
-  src: "../assets/fonts/ClashDisplay-variable.ttf",
+  src: "../assets/fonts/ClashDisplay-Variable.ttf",
   variable: "--font-calshDisplay",
   weight:"700",
 })

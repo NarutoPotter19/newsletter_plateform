@@ -120,7 +120,7 @@ export const sideBarItems: DashBoardSidebarTypes[] = [
   },
 ];
 
-export const sideBarBottomItems: DashboardSideBarTypes[] = [
+export const sideBarBottomItems: DashBoardSidebarTypes[] = [
   {
     title: "Settings",
     url: "/dashboard/settings",
