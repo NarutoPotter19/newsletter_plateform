@@ -63,6 +63,8 @@
 import { NextUIProvider } from '@nextui-org/react';
 import { useUser } from '@clerk/nextjs';
 import { usePathname } from 'next/navigation';
+import DashboardSidebar from '../widgets/dashboard/sidebar/dashboard.sidebar';
+import { Toaster } from 'react-hot-toast';
 
 interface ProviderProps {
   children: React.ReactNode;
@@ -96,8 +98,7 @@ export default function Providers({ children }: ProviderProps) {
       {dashboardPaths.includes(pathname) ? (
         <div className="w-full flex">
           <div className="w-[290px] h-screen overflow-y-scroll">
-            {// here I will add Dashboard later
-            }
+            <DashboardSidebar/>
           </div>
           <div className="flex-grow">
             {children}
@@ -106,6 +107,7 @@ export default function Providers({ children }: ProviderProps) {
       ) : (
         <>{children}</>
       )}
+      <Toaster position="top-center" reverseOrder={false} />
     </NextUIProvider>
   );
 }
