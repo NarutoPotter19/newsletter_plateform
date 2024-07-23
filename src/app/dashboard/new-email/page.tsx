@@ -8,10 +8,35 @@ import Emaileditor from "@/shared/components/editor/email.editor";
 const Page = () => {
 
 const searchParams = useSearchParams();
-const subject: string = searchParams.get("subject")!;
+const subject: string = searchParams?.get("subject")!;
+// modifies for null search params error
+
+// if (!subject) {
+//   return (
+//     <div className="w-full flex bg-slate-50">
+//       <div className="w-full p-5 bg-white rounded-r-xl">
+//         <Link href={"/dashboard/write"} className="opacity-[.7] w-min flex text-xl items-center">
+//           <span>{ICONS.backArrow}</span>
+//           <span>Exit</span>
+//         </Link>
+//         <div className="my-5">
+//           <p>Subject is missing. Please provide a valid subject.</p>
+//         </div>
+//       </div>
+//     </div>
+//   );
+// }
+
+
+
+
 const subjectTitle = subject.replace(/-/g,"");
 // this is using the regexp where all the - of subject string is 
 // replace by "" . and g represent global means all the ocurence is replced.
+
+
+
+
 
   return (
     <div className="w-full flex bg-slate-50">

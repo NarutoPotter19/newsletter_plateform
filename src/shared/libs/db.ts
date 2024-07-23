@@ -77,7 +77,7 @@ import dotenv from 'dotenv';
 // Load environment variables from .env.local file
 dotenv.config({ path: '.env.local' });
 
-const connectDb = async () => {
+export const connectDb = async () => {
   try {
     const uri = createAstraUri(
       process.env.ASTRA_DB_API_ENDPOINT!,
@@ -101,7 +101,7 @@ const connectDb = async () => {
   }
 };
 
-export default connectDb;
+//  default connectDb;
 
 
 
