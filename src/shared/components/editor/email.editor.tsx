@@ -199,16 +199,17 @@
 
 'use client';
 import EmailEditor, { EditorRef, EmailEditorProps } from "react-email-editor";
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { DefaultJsonData } from "@/assets/mails/default";
 import { useClerk } from "@clerk/nextjs";
 import { useRouter } from "next/navigation";
 import { Button } from "@nextui-org/react";
 import { saveEmail } from "@/action/save.email";
 import toast from "react-hot-toast";
+import { GetEmailDetails } from "@/action/get.email.details";
 
 const Emaileditor = ({ subjectTitle }: { subjectTitle: string }) => {
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
   const [jsonData, setJsonData] = useState<any | null>(DefaultJsonData);
   const { user } = useClerk();
   const emailEditorRef = useRef<EditorRef>(null);
@@ -222,6 +223,11 @@ const Emaileditor = ({ subjectTitle }: { subjectTitle: string }) => {
       setJsonData(design);
     });
   };
+
+
+  useEffect(()=>{
+    getEmailDetails();
+  },[user]);
 
   const onReady: EmailEditorProps['onReady'] = () => {
     const unlayer: any = emailEditorRef.current?.editor;
@@ -260,6 +266,23 @@ const Emaileditor = ({ subjectTitle }: { subjectTitle: string }) => {
     });
   };
 
+
+
+  const getEmailDetails = async()=>{
+    await GetEmailDetails({
+      title: subjectTitle,
+      newsLetterOwnerId: user?.id!,
+    }).then ((res:any)=>{
+
+      if(res){
+        setJsonData(JSON.parse(res?.content));
+      }
+      setLoading(false);
+    });
+  };
+
+
+
   return (
     <>
       {!loading && (
@@ -288,5 +311,14 @@ const Emaileditor = ({ subjectTitle }: { subjectTitle: string }) => {
     </>
   );
 };
-
+ 
 export default Emaileditor;
+
+
+
+
+
+//chat gpt help 2
+
+
+
