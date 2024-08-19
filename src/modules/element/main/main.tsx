@@ -63,7 +63,7 @@ const Main = () => {
 
           </div>
             <div className="w-full bg-white border rounded p-5 my-3">
-              {/* Homew page URl */}
+              {/* Home page URl */}
               <div className="bg-white">
                 <h4 className="font-medium"> Home Page</h4>
                 <div className="w-full px-2 my-1 h-[30px] bg-transparent border rounded-lg relative flex items center coursor-pointer "
@@ -72,7 +72,8 @@ const Main = () => {
                  <small className={`w-[70%] text-sm overflow-hidden overflow-ellipsis whitespace-nowrap copy-text ${
                       copied ? "bg-blue-200" : "bg-transparent"
                     }`}>
-                      https://becodemy-newletter.beocodemy.com/
+                      {/* https://becodemy-newletter.beocodemy.com/ */}
+                      {process.env.NEXT_PUBLIC_WEBSITE_URL}/subscibe?username={user?.username}
 
 
                  </small>

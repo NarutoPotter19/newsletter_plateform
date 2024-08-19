@@ -71,7 +71,9 @@ interface ProviderProps {
 }
 
 export default function Providers({ children }: ProviderProps) {
-  const pathname = usePathname();
+  // const pathname = usePathname();
+  const pathname = usePathname() ?? ''; // Ensure pathname is always a string
+
   const { isLoaded } = useUser();
 
   if (!isLoaded) {

@@ -17,9 +17,17 @@ const DashboardItems = ({bottomContent}:{bottomContent?:boolean}) => {
       signOut();
       redirect("/sign-in");
     }
+
     useEffect(() => {
-      setActiveRoute(pathName);
-    },[pathName,setActiveRoute]);
+      if (pathName) {
+        setActiveRoute(pathName);
+      }
+    }, [pathName, setActiveRoute]);
+    
+
+    // useEffect(() => {
+    //   setActiveRoute(pathName);
+    // },[pathName,setActiveRoute]);
 //   return (
 //     <>
 //     {
@@ -125,9 +133,17 @@ return (
               className="p-2 py-5 flex items-center"
               href={
                 item.url === "/"
-                  ? `/subscribe?username=${user?.username}`
+                  ? `/dashboard/subscribe?username=${user?.username}`
                   : item.url
               }
+              // href={
+              //   item.url === "/"
+              //     ? `/subscribe?username=${user?.username ?? ""}`
+              //     : item.url
+              // }
+              
+
+
             >
               <span
                 className={`text-3xl mr-2 ${
