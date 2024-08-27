@@ -8,6 +8,7 @@ import { useRouter } from "next/navigation";
 import  { useEffect, useState } from 'react';
 import toast from 'react-hot-toast';
 import Link from 'next/link';
+import { deleteEmail } from '@/action/delete.email';
 
 const Write = () => {
     const [emailTitle,setEmailTitle]= useState("");
@@ -74,6 +75,9 @@ const Write = () => {
 
     const deleteHandler=async(id:string)=>{
         //
+        await  deleteEmail({emailId: id}).then((res)=>{
+          fetchEmails();
+        })
 
     }
 

@@ -207,6 +207,7 @@ import { Button } from "@nextui-org/react";
 import { saveEmail } from "@/action/save.email";
 import toast from "react-hot-toast";
 import { GetEmailDetails } from "@/action/get.email.details";
+import { sendEmail } from "@/shared/utils/email.sender";
 
 const Emaileditor = ({ subjectTitle }: { subjectTitle: string }) => {
   const [loading, setLoading] = useState(true);
@@ -221,6 +222,15 @@ const Emaileditor = ({ subjectTitle }: { subjectTitle: string }) => {
     unlayer?.exportHtml(async (data) => {
       const { design, html } = data;
       setJsonData(design);
+
+      await sendEmail({
+        userEmail: ["hpmagic11@gmail.com"],
+        subject:subjectTitle,
+        content:html,
+      }).then((res)=>{
+        toast.success("Email sent SUccesfully");
+        history.push("/dashboard/write");
+      });
     });
   };
 

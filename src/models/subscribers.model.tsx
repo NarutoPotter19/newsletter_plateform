@@ -44,6 +44,15 @@ const subscribersSchema = new Schema(
       type: String,
       required: true,
     },
+    source:{
+        type: String,
+        default: "By Shivankit website",
+    },
+    status:{
+        type:String,
+        default: "Subscribed"
+
+    },
   },
   { timestamps: true }
 );
