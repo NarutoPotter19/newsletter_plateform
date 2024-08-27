@@ -3,7 +3,7 @@
 import {connectDb} from "@/shared/libs/db";
 import Email from "@/models/email.model";
 
-
+// this fuction will handle delete functionalty of the application.
 export const deleteEmail= async({emailId}: {emailId: string})=>{
     try {
         await connectDb();
